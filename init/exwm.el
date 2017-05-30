@@ -1,0 +1,62 @@
+(my-require-and-eval (exwm nil exwm)
+                     (require 'exwm-config)
+                     (exwm-config-ido)
+
+                     (setq exwm-workspace-number 10)
+
+                     (require 'exwm-systemtray)
+                     (exwm-systemtray-enable)
+
+                     (exwm-input-set-key (kbd "<s-f5>") #'exwm-reset)
+                     (exwm-input-set-key (kbd "s-w") #'exwm-workspace-switch)
+                     (exwm-input-set-key (kbd "s-k") #'exwm-input-toggle-keyboard)
+                     (exwm-input-set-key (kbd "s-<right>") #'windmove-right)
+                     (exwm-input-set-key (kbd "s-<left>") #'windmove-left)
+                     (exwm-input-set-key (kbd "s-<up>") #'windmove-up)
+                     (exwm-input-set-key (kbd "s-<down>") #'windmove-down)
+
+                     (exwm-input-set-key (kbd "s-r")
+                                         (lambda (command)
+                                           (interactive (list (read-shell-command "$ ")))
+                                           (start-process-shell-command command nil command)))
+
+                     (setq exwm-workspace-number 10)
+                     (exwm-input-set-key (kbd "s-0")
+                                         (lambda () (interactive) (exwm-workspace-switch 0)))
+                     (exwm-input-set-key (kbd "s-1")
+                                         (lambda () (interactive) (exwm-workspace-switch 1)))
+                     (exwm-input-set-key (kbd "s-2")
+                                         (lambda () (interactive) (exwm-workspace-switch 2)))
+                     (exwm-input-set-key (kbd "s-3")
+                                         (lambda () (interactive) (exwm-workspace-switch 3)))
+                     (exwm-input-set-key (kbd "s-4")
+                                         (lambda () (interactive) (exwm-workspace-switch 4)))
+                     (exwm-input-set-key (kbd "s-5")
+                                         (lambda () (interactive) (exwm-workspace-switch 5)))
+                     (exwm-input-set-key (kbd "s-6")
+                                         (lambda () (interactive) (exwm-workspace-switch 6)))
+                     (exwm-input-set-key (kbd "s-7")
+                                         (lambda () (interactive) (exwm-workspace-switch 7)))
+                     (exwm-input-set-key (kbd "s-8")
+                                         (lambda () (interactive) (exwm-workspace-switch 8)))
+                     (exwm-input-set-key (kbd "s-9")
+                                         (lambda () (interactive) (exwm-workspace-switch 9)))
+
+                     (add-hook 'exwm-update-class-hook
+                               (lambda ()
+                                 (unless (or (string-prefix-p "sun-awt-X11-" exwm-instance-name)
+                                             (string= "gimp" exwm-instance-name))
+                                   (exwm-workspace-rename-buffer exwm-class-name))))
+                     (add-hook 'exwm-update-title-hook
+                               (lambda ()
+                                 (when (or (not exwm-instance-name)
+                                           (string-prefix-p "sun-awt-X11-" exwm-instance-name)
+                                           (string= "gimp" exwm-instance-name))
+                                   (exwm-workspace-rename-buffer exwm-title))))
+
+                     (add-hook 'exwm-floating-setup-hook #'exwm-layout-hide-mode-line)
+                     (add-hook 'exwm-floating-exit-hook #'exwm-layout-show-mode-line)
+
+                     (server-start)
+
+                     (exwm-enable))

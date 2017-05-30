@@ -1,0 +1,10 @@
+(my-require-and-eval (ido nil idomenu)
+                     (my-check-or-install-package 'ido-yes-or-no)
+                     (my-check-or-install-package 'ido-ubiquitous)
+                     (ido-mode t)
+                     (ido-ubiquitous-mode t)
+                     (ido-yes-or-no-mode t))
+
+(my-require-and-eval (smex nil smex)
+                     (smex-initialize)
+                     (global-set-key (kbd "M-x") 'smex))
