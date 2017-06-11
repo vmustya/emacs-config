@@ -10,4 +10,4 @@
 
 (package-initialize)
 
-(my-load-init '(package exwm custom evil iface ido paredit c-c++))
+(my-load-init '(package exwm custom evil iface ido paredit c-c++ ruby))

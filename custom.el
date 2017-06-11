@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (google-c-style ggtags tango-2-theme smex paredit idomenu ido-yes-or-no ido-ubiquitous flycheck-irony exwm evil company-irony))))
+    (ruby-block tango-2-theme smex paredit idomenu ido-yes-or-no ido-ubiquitous google-c-style ggtags flycheck-irony exwm evil company-irony))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
