@@ -13,7 +13,8 @@
        (list
         '(width . 80)
         '(height . 60)
-        '(font . "Terminus-12"))
+        '(font . "-xos4-terminus-medium-r-normal--20-200-72-72-c-100-iso10646-1"))
+        ;; '(font . "Monospace-12"))
        default-frame-alist))
 
 (setq initial-frame-alist default-frame-alist)
