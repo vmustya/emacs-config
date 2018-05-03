@@ -11,6 +11,7 @@
 (package-initialize)
 
 (my-load-init '(package
+                cmake
                 exwm
                 custom
                 evil
