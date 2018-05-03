@@ -1,8 +1,12 @@
+*~
+
+ac-comphist.dat
 auto-save-list
+custom.el
 elpa
 ido.last
 irony
+semanticdb
+session
 smex-items
 tramp
-semanticdb
-custom.el
