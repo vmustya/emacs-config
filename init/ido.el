@@ -1,7 +1,8 @@
 (my-require-and-eval (ido nil idomenu)
+                     (my-check-or-install-package 'ido-completing-read+)
                      (my-check-or-install-package 'ido-yes-or-no)
-                     (my-check-or-install-package 'ido-ubiquitous)
                      (ido-mode t)
+                     (ido-everywhere t)
                      (ido-ubiquitous-mode t)
                      (ido-yes-or-no-mode t))
 

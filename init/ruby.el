@@ -14,13 +14,6 @@
                      (my-require-and-eval (ruby-end nil ruby-end)
                                           (add-hook 'ruby-mode-hook 'ruby-end-mode))
 
-                     ;; Block start highlighting
-                     (my-require-and-eval (ruby-block nil ruby-block)
-                                          (add-hook 'ruby-mode-hook
-                                                    (lambda ()
-                                                      (ruby-block-mode t)
-                                                      (setq ruby-block-highlight-toggle t))))
-
                      ;; Autocompletion and code navigation
                      (my-require-and-eval (robe nil robe)
                                           (add-hook 'ruby-mode-hook 'robe-mode))
