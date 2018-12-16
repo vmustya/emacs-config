@@ -19,5 +19,6 @@
                 ido
                 paredit
                 c-c++
+                lisp
                 ruby
                 yaml))
