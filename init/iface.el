@@ -13,8 +13,9 @@
        (list
         '(width . 80)
         '(height . 60)
-        '(font . "-xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1"))
-        ;; '(font . "Monospace-12"))
+        (ecase system-type
+          ('gnu/linux '(font . "-xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1"))
+          ('windows-nt '(font . "Terminus-12"))))
        default-frame-alist))
 
 (setq initial-frame-alist default-frame-alist)

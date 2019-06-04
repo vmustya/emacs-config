@@ -10,15 +10,7 @@
 
 (package-initialize)
 
-(my-load-init '(package
-                cmake
-                exwm
-                custom
-                evil
-                iface
-                ido
-                paredit
-                c-c++
-                lisp
-                ruby
-                yaml))
+(my-load-init (append '(package custom cmake c-c++ evil iface ido paredit yaml)
+                      (ecase system-type
+                        ('gnu/linux '(exwm lisp ruby))
+                        ('windows-nt '()))))
